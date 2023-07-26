@@ -1,0 +1,7 @@
+Modelling of the Solar Cell:
+
+DIAG: Circuit Diagram of the PV Model: https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.researchgate.net%2Ffigure%2FPV-solar-cell-model-The-output-current-Ipv-of-the-PV-cell-model-can-be-defined-as-in_fig5_318860620&psig=AOvVaw0zqiBNulPsAkdlgiH0Pjoq&ust=1690431397854000&source=images&cd=vfe&opi=89978449&ved=0CA4QjRxqFwoTCMDXl-3Bq4ADFQAAAAAdAAAAABAI
+
+I = Iph - Id - IRsh
+
+I = Iph - Io(e^((q(V+IRs)/akT))-1) - ((V + IRs)/Rsh)

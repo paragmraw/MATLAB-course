@@ -1,0 +1,71 @@
+File Extensions: .m / .slx / .mlx / .dll
+MATLAB takes the inherant value.
+Semicolon for non-echo
+
+FUNC:
+diag
+triu
+tril
+sparse
+transpose (')
+eye(n): Identity Matrix
+rand(n): Random Matrix
+randi(n): Random Integer Matrix
+zeros(n): Empty Matrix
+ones(n): All ones Matrix
+
+Find volume of a given space with length 5, width 20, height 90
+
+Technical Computing Workflow: Access, Explore & Discover, Share
+
+--------------------------------------------------------------------------------------
+
+;
+;   <----- Fs
+;    Ks     ____
+;---%%%%---|    |   
+;          |    |  ----> Fa
+;---[[]]---|____|
+;    Kd
+;   <----- Fd
+;
+
+
+m = mass
+Kd = Damping force
+Ks = Spring force
+Fa = Applied force
+Fs = Spring force
+Fd = Damping force
+Ft = Total force
+
+Ft = Fa - Fs - Fd
+
+Ft = m*a = Ft/m
+
+I(a) = Velocity
+I(Velocity) = Displacement or Position
+
+------------------------------------------------------------------------------------
+
+Vs = Source Voltage
+R = Resistance
+Vb = Back EMF
+L = Inductance
+
+Vs = R*i(t) + L di(t)/dt + Vb
+
+tau = (I.L)*w(t)/dt
+
+Vb = (K.B)*w
+
+tau = (K.T)*i(t)
+
+Vs = R*i(t) + L di(t)/dt + (K.B)w
+
+di(t)/dt = (1/L)(Vs - R*i(t) - (K.B)*w)
+
+I(di(t)/dt) = I((1/L)(Vs - R*i(t) - (K.B)*w ))
+
+w(t) = I((Kt/IL)*i(t))
+
