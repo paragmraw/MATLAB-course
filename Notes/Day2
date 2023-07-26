@@ -19,3 +19,7 @@ Differentiate: diff(f); diff(f, x); diff(f, x, o);
 Integrate: int(f); int(f, x); int(f, l(f), l(t)); int(f, x, l(f), l(t));
 
 Taylor Series: taylor(S, x, rad, 'order', o)
+
+Infinity: inf
+
+Divide Equally: linspace(a, b, p)

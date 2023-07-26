@@ -1,0 +1,22 @@
+clc;clear all;close all;
+
+% ezplot('x^2')
+% figure
+% ezplot('x^2', [-2, 2])
+% hold on
+% ezplot('sin(x)', [-2*pi, 2*pi])
+% figure
+
+
+% x=[0:5];
+% y=2.^x;
+% plot(x, y, '-or')
+
+% x = linspace(-10,10,1000);
+% y=2.^x;
+% plot(x, y, '-or')
+
+t = linspace(0,10,100);
+s=t.^2/2;
+plot(t,s,'-0')
+
