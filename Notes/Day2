@@ -5,3 +5,13 @@ DIAG: Circuit Diagram of the PV Model: https://www.google.com/url?sa=i&url=https
 I = Iph - Id - IRsh
 
 I = Iph - Io(e^((q(V+IRs)/akT))-1) - ((V + IRs)/Rsh)
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+Symbolic Representation: sym/ syms
+
+Pretty/ Formatter: pretty(f)
+
+Simplify the equation: simplify(f)
+
+
