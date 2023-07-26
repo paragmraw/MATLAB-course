@@ -8,10 +8,14 @@ I = Iph - Io(e^((q(V+IRs)/akT))-1) - ((V + IRs)/Rsh)
 
 ----------------------------------------------------------------------------------------------------------------------------------------
 
-Symbolic Representation: sym/ syms
+Symbolic Representation: sym, syms
 
 Pretty/ Formatter: pretty(f)
 
 Simplify the equation: simplify(f)
 
+Differentiate: diff(f); diff(f, x); diff(f, x, o);
 
+Integrate: int(f); int(f, x); int(f, l(f), l(t)); int(f, x, l(f), l(t));
+
+Taylor Series: taylor(S, x, rad, 'order', o)
