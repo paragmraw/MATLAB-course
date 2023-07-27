@@ -1,0 +1,544 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>Parag Mandal - ENG20CS0246 / DAY 2</title><meta name="generator" content="MATLAB 9.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2023-07-27"><meta name="DC.source" content="DAY2.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; }
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+span.typesection { color:#A0522D }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>Parag Mandal - ENG20CS0246 / DAY 2</h1><!--introduction--><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Taylor's Series</a></li><li><a href="#2">Symbolic Representation</a></li><li><a href="#3">Plots</a></li><li><a href="#4">ODE</a></li><li><a href="#5">Limits</a></li><li><a href="#6">Integration</a></li><li><a href="#7">Face</a></li><li><a href="#8">Differentiation</a></li><li><a href="#9">Colored Chips</a></li><li><a href="#10">Cell</a></li><li><a href="#11">Birds</a></li></ul></div><h2 id="1">Taylor's Series</h2><pre class="codeinput">clc;clear <span class="string">all</span>;close <span class="string">all</span>;
+syms <span class="string">x</span>
+S = sin(x);
+V = taylor(S, x, pi/2, <span class="string">'order'</span>, 6)
+V1 = taylor(S, x, 0, <span class="string">'order'</span>, 12)
+</pre><pre class="codeoutput"> 
+V =
+ 
+(x - pi/2)^4/24 - (x - pi/2)^2/2 + 1
+ 
+ 
+V1 =
+ 
+- x^11/39916800 + x^9/362880 - x^7/5040 + x^5/120 - x^3/6 + x
+ 
+</pre><h2 id="2">Symbolic Representation</h2><pre class="codeinput">clc;clear <span class="string">all</span>;close <span class="string">all</span>;
+
+syms <span class="string">x</span> <span class="string">y</span> <span class="string">a</span> <span class="string">b</span> <span class="string">c</span>
+f = a*x^2 + b*x + c;
+f
+
+clc;clear <span class="string">all</span>;close <span class="string">all</span>;
+
+syms <span class="string">a</span> <span class="string">x</span>
+
+f = 2*a/3 + 4*a/7 - 6.5*x + x/3 + 4*5/3 -1.5;
+f
+
+clc;clear <span class="string">all</span>;close <span class="string">all</span>;
+
+syms <span class="string">a</span> <span class="string">b</span> <span class="string">c</span> <span class="string">x</span>
+f = sqrt(a*x^2 + b*x +c);
+pretty(f)
+
+clc;clear <span class="string">all</span>;close <span class="string">all</span>;
+
+syms <span class="string">x</span>
+S = (x^2 + 5*x +6)/(x+2);
+Si = simplify(S)
+</pre><pre class="codeoutput"> 
+f =
+ 
+a*x^2 + b*x + c
+ 
+ 
+f =
+ 
+(26*a)/21 - (37*x)/6 + 31/6
+ 
+        2
+sqrt(a x  + b x + c)
+
+ 
+Si =
+ 
+x + 3
+ 
+</pre><h2 id="3">Plots</h2><pre class="codeinput">clc;clear <span class="string">all</span>;close <span class="string">all</span>;
+
+ezplot(<span class="string">'x^2'</span>)
+figure
+ezplot(<span class="string">'x^2'</span>, [-2, 2])
+hold <span class="string">on</span>
+ezplot(<span class="string">'sin(x)'</span>, [-2*pi, 2*pi])
+figure
+
+
+x=[0:5];
+y=2.^x;
+plot(x, y, <span class="string">'-or'</span>)
+
+x = linspace(-10,10,1000);
+y=2.^x;
+plot(x, y, <span class="string">'-or'</span>)
+
+t = linspace(0,10,100);
+s=t.^2/2;
+plot(t,s,<span class="string">'-or'</span>)
+xlabel(<span class="string">'Time(sec)'</span>);
+ylabel(<span class="string">'Distance(m)'</span>);
+legend(<span class="string">'Distance'</span>)
+title(<span class="string">'Distance as a function of time'</span>)
+gtext(<span class="string">'s=t^2/2'</span>)
+grid <span class="string">on</span>
+
+[x, y, z] = sphere(100)
+surf(x,y,z)
+
+t = linspace(0,pi,50);
+r = 1 + sin(t);
+[X, Y, Z] = cylinder(r)
+surf(X,Y,Z)
+</pre><pre class="codeoutput error">Error using gtext
+Interrupted
+
+Error in DAY2 (line 64)
+gtext('s=t^2/2')
+</pre><h2 id="4">ODE</h2><pre class="codeinput">clc;clear <span class="string">all</span>;close <span class="string">all</span>;
+
+syms <span class="string">y(t)</span>
+eqn = diff(y, t) == 4*y;
+cond = y(0) == 5;
+ySol(t) = dsolve(eqn)
+
+ySol(t) = dsolve(eqn, cond)
+
+ySol(t) = dsolve(<span class="string">'D2y + 2*Dy + y = 0'</span>)
+
+clc;clear <span class="string">all</span>;close <span class="string">all</span>;
+
+syms <span class="string">y(t)</span> <span class="string">a</span> <span class="string">b</span>
+eqn = diff(y, t, 2) == a^2*y;
+Dy = diff(y,t);
+cond = [y(0)==b, Dy(0)==1];
+ySol(t) = dsolve(eqn, cond)
+
+clc;clear <span class="string">all</span>;close <span class="string">all</span>;
+syms <span class="string">x(t)</span>
+k = input(<span class="string">'Enter Growth Rate: '</span>);
+ode = diff(x, t) == k*x;
+xsol(t) = dsolve(ode);
+cond = x(0) == 1000;
+xsol(t) = dsolve(ode, cond);
+n = input(<span class="string">'Time (in years): '</span>);
+Population_Size = subs(xsol(t), t, n)
+
+t = 0:n;
+X = xsol(t);
+plot(t, X, <span class="string">'r--o'</span>)
+xlabel(<span class="string">'Time'</span>);
+ylabel(<span class="string">'Population Size'</span>);
+grid <span class="string">on</span>
+</pre><h2 id="5">Limits</h2><pre class="codeinput">clc;clear <span class="string">all</span>;close <span class="string">all</span>;
+syms <span class="string">x</span>
+S = 2*x*sin(1/x);
+V = limit(S, x, inf)
+V1 = limit(S,x, 0, <span class="string">"left"</span>)
+V2 = limit(S,x, 0, <span class="string">"right"</span>)
+</pre><h2 id="6">Integration</h2><pre class="codeinput">clc;clear <span class="string">all</span>;close <span class="string">all</span>;
+
+syms <span class="string">x</span> <span class="string">t</span>
+S = 2*cos(x) - 6*x;
+E1 = int(S)
+E2 = int(S,t)
+
+clc;clear <span class="string">all</span>;close <span class="string">all</span>;
+
+syms <span class="string">y</span> <span class="string">t</span>;
+S = 5*y^2 * cos(4*t);
+E1 = int(S)
+E2 = int(S, t)
+
+clc;clear <span class="string">all</span>;close <span class="string">all</span>;
+
+syms <span class="string">x</span>;
+S = (-2*x)/((1+x^2)^2);
+E1 = int(S, x)
+E2 = int(S, 0, 2)
+E3 = int(S, x, 0, 2)
+</pre><h2 id="7">Face</h2><pre class="codeinput">a = imread(<span class="string">"PROF-PIC .jpg"</span>);
+imshow(a)
+b = imresize(a, 0.8);
+detector = vision.CascadeObjectDetector(<span class="string">"Mouth"</span>);
+detector.MergeThreshold = 100;
+bbox = step(detector, b)
+out = insertObjectAnnotation(b, <span class="string">"rectangle"</span>, bbox, <span class="string">'detection'</span>)
+imshow(out)
+</pre><h2 id="8">Differentiation</h2><pre class="codeinput">clc;clear <span class="string">all</span>;close <span class="string">all</span>;
+
+syms <span class="string">x</span>;
+y = exp(x^4);
+diff(y)
+
+clc;clear <span class="string">all</span>;close <span class="string">all</span>;
+
+syms <span class="string">y</span> <span class="string">t</span>;
+f = 5*y^2 * cos(3*t);
+SB = diff(f)
+SB_1 = diff(f, t)
+SB_2 = diff(f, t, 2)
+SB_3 = diff((SB_1), t)
+</pre><h2 id="9">Colored Chips</h2><pre class="codeinput">clc;clear <span class="string">all</span>;close <span class="string">all</span>;
+
+rgb = imread(<span class="string">'coloredChips.png'</span>);
+imshow(rgb)
+figure
+gray_image = rgb2gray(rgb);
+imshow(gray_image);
+figure
+[centers, radii] = imfindcircles(rgb,[20 25],<span class="string">'ObjectPolarity'</span>,<span class="string">'dark'</span>)
+[centers, radii] = imfindcircles(rgb,[20 25],<span class="string">'ObjectPolarity'</span>,<span class="string">'dark'</span>, <span class="string">'Sensitivity'</span>,0.9)
+
+imshow(rgb);
+h = viscircles(centers,radii);
+</pre><h2 id="10">Cell</h2><pre class="codeinput">clc;clear <span class="string">all</span>;close <span class="string">all</span>;
+
+I = imread(<span class="string">'cell.tif'</span>);
+figure, imshow(I), title(<span class="string">'original image'</span>);
+[~, threshold] = edge(I, <span class="string">'sobel'</span>);
+fudgeFactor = .5;
+BWs = edge(I,<span class="string">'sobel'</span>, threshold * fudgeFactor);
+figure, imshow(BWs), title(<span class="string">'binary gradient mask'</span>);
+se90 = strel(<span class="string">'line'</span>, 3, 90);
+se0 = strel(<span class="string">'line'</span>, 3, 0);
+BWsdil = imdilate(BWs, [se90 se0]);
+figure, imshow(BWsdil), title(<span class="string">'dilated gradient mask'</span>);
+BWdfill = imfill(BWsdil, <span class="string">'holes'</span>);
+figure, imshow(BWdfill);
+title(<span class="string">'binary image with filled holes'</span>);
+BWnobord = imclearborder(BWdfill, 4);
+figure, imshow(BWnobord), title(<span class="string">'cleared border image'</span>);
+seD = strel(<span class="string">'diamond'</span>,1);
+BWfinal = imerode(BWnobord,seD);
+BWfinal = imerode(BWfinal,seD);
+figure, imshow(BWfinal), title(<span class="string">'segmented image'</span>);
+BWoutline = bwperim(BWfinal);
+Segout = I;
+Segout(BWoutline) = 255;
+figure, imshow(Segout), title(<span class="string">'outlined original image'</span>);
+</pre><h2 id="11">Birds</h2><pre class="codeinput">clc;clear <span class="string">all</span>;close <span class="string">all</span>;
+syms <span class="string">x(t)</span>
+k = input(<span class="string">'Enter Growth Rate: '</span>);
+ode = diff(x, t) == k*x;
+xsol(t) = dsolve(ode);
+cond = x(0) == 1000;
+xsol(t) = dsolve(ode, cond);
+n = input(<span class="string">'Time (in years): '</span>);
+Population_Size = subs(xsol(t), t, n)
+
+t = 0:n;
+X = xsol(t);
+plot(t, X, <span class="string">'r--o'</span>)
+xlabel(<span class="string">'Time'</span>);
+ylabel(<span class="string">'Population Size'</span>);
+grid <span class="string">on</span>
+</pre><p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2023a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% Parag Mandal - ENG20CS0246 / DAY 2
+
+%% Taylor's Series
+clc;clear all;close all;
+syms x
+S = sin(x);
+V = taylor(S, x, pi/2, 'order', 6)
+V1 = taylor(S, x, 0, 'order', 12)
+
+%% Symbolic Representation
+
+clc;clear all;close all;
+
+syms x y a b c
+f = a*x^2 + b*x + c;
+f
+
+clc;clear all;close all;
+
+syms a x 
+
+f = 2*a/3 + 4*a/7 - 6.5*x + x/3 + 4*5/3 -1.5;
+f
+
+clc;clear all;close all;
+
+syms a b c x
+f = sqrt(a*x^2 + b*x +c);
+pretty(f)
+
+clc;clear all;close all;
+
+syms x
+S = (x^2 + 5*x +6)/(x+2);
+Si = simplify(S)
+
+%% Plots
+
+clc;clear all;close all;
+
+ezplot('x^2')
+figure
+ezplot('x^2', [-2, 2])
+hold on
+ezplot('sin(x)', [-2*pi, 2*pi])
+figure
+
+
+x=[0:5];
+y=2.^x;
+plot(x, y, '-or')
+
+x = linspace(-10,10,1000);
+y=2.^x;
+plot(x, y, '-or')
+
+t = linspace(0,10,100);
+s=t.^2/2;
+plot(t,s,'-or')
+xlabel('Time(sec)');
+ylabel('Distance(m)');
+legend('Distance')
+title('Distance as a function of time')
+gtext('s=t^2/2')
+grid on
+
+[x, y, z] = sphere(100)
+surf(x,y,z)
+
+t = linspace(0,pi,50);
+r = 1 + sin(t);
+[X, Y, Z] = cylinder(r)
+surf(X,Y,Z)
+
+%% ODE
+
+clc;clear all;close all;
+
+syms y(t)
+eqn = diff(y, t) == 4*y;
+cond = y(0) == 5;
+ySol(t) = dsolve(eqn)
+
+ySol(t) = dsolve(eqn, cond)
+
+ySol(t) = dsolve('D2y + 2*Dy + y = 0')
+
+clc;clear all;close all;
+
+syms y(t) a b
+eqn = diff(y, t, 2) == a^2*y;
+Dy = diff(y,t);
+cond = [y(0)==b, Dy(0)==1];
+ySol(t) = dsolve(eqn, cond)
+
+clc;clear all;close all;
+syms x(t)
+k = input('Enter Growth Rate: ');
+ode = diff(x, t) == k*x;
+xsol(t) = dsolve(ode);
+cond = x(0) == 1000;
+xsol(t) = dsolve(ode, cond);
+n = input('Time (in years): ');
+Population_Size = subs(xsol(t), t, n)
+
+t = 0:n;
+X = xsol(t);
+plot(t, X, 'rREPLACE_WITH_DASH_DASHo')
+xlabel('Time');
+ylabel('Population Size');
+grid on
+
+%% Limits
+
+clc;clear all;close all;
+syms x
+S = 2*x*sin(1/x);
+V = limit(S, x, inf)
+V1 = limit(S,x, 0, "left")
+V2 = limit(S,x, 0, "right")
+
+%% Integration
+
+clc;clear all;close all;
+
+syms x t
+S = 2*cos(x) - 6*x;
+E1 = int(S)
+E2 = int(S,t)
+
+clc;clear all;close all;
+
+syms y t;
+S = 5*y^2 * cos(4*t);
+E1 = int(S)
+E2 = int(S, t)
+
+clc;clear all;close all;
+
+syms x;
+S = (-2*x)/((1+x^2)^2);
+E1 = int(S, x)
+E2 = int(S, 0, 2)
+E3 = int(S, x, 0, 2)
+
+%% Face
+
+a = imread("PROF-PIC .jpg");
+imshow(a)
+b = imresize(a, 0.8);
+detector = vision.CascadeObjectDetector("Mouth");
+detector.MergeThreshold = 100;
+bbox = step(detector, b)
+out = insertObjectAnnotation(b, "rectangle", bbox, 'detection')
+imshow(out)
+
+%% Differentiation
+
+clc;clear all;close all;
+
+syms x;
+y = exp(x^4);
+diff(y)
+
+clc;clear all;close all;
+
+syms y t;
+f = 5*y^2 * cos(3*t);
+SB = diff(f)  
+SB_1 = diff(f, t)
+SB_2 = diff(f, t, 2)
+SB_3 = diff((SB_1), t)
+
+%% Colored Chips
+
+clc;clear all;close all;
+
+rgb = imread('coloredChips.png');
+imshow(rgb)
+figure
+gray_image = rgb2gray(rgb);
+imshow(gray_image);
+figure
+[centers, radii] = imfindcircles(rgb,[20 25],'ObjectPolarity','dark')
+[centers, radii] = imfindcircles(rgb,[20 25],'ObjectPolarity','dark', 'Sensitivity',0.9)
+
+imshow(rgb);
+h = viscircles(centers,radii);
+
+%% Cell
+
+clc;clear all;close all;
+
+I = imread('cell.tif');
+figure, imshow(I), title('original image');
+[~, threshold] = edge(I, 'sobel');
+fudgeFactor = .5;
+BWs = edge(I,'sobel', threshold * fudgeFactor);
+figure, imshow(BWs), title('binary gradient mask');
+se90 = strel('line', 3, 90);
+se0 = strel('line', 3, 0);
+BWsdil = imdilate(BWs, [se90 se0]);
+figure, imshow(BWsdil), title('dilated gradient mask');
+BWdfill = imfill(BWsdil, 'holes');
+figure, imshow(BWdfill);
+title('binary image with filled holes');
+BWnobord = imclearborder(BWdfill, 4);
+figure, imshow(BWnobord), title('cleared border image');
+seD = strel('diamond',1);
+BWfinal = imerode(BWnobord,seD);
+BWfinal = imerode(BWfinal,seD);
+figure, imshow(BWfinal), title('segmented image');
+BWoutline = bwperim(BWfinal);
+Segout = I;
+Segout(BWoutline) = 255;
+figure, imshow(Segout), title('outlined original image');
+
+%% Birds
+
+clc;clear all;close all;
+syms x(t)
+k = input('Enter Growth Rate: ');
+ode = diff(x, t) == k*x;
+xsol(t) = dsolve(ode);
+cond = x(0) == 1000;
+xsol(t) = dsolve(ode, cond);
+n = input('Time (in years): ');
+Population_Size = subs(xsol(t), t, n)
+
+t = 0:n;
+X = xsol(t);
+plot(t, X, 'rREPLACE_WITH_DASH_DASHo')
+xlabel('Time');
+ylabel('Population Size');
+grid on
+
+##### SOURCE END #####
+--></body></html>
