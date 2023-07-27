@@ -10,4 +10,5 @@ Simulink for Model Based Design
 ------> Source Coding ------> Channel (line) coding ----> Modulator --
                                                                       |
                                                                       |
+                                                                      |
                                                                        
