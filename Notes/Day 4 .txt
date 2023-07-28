@@ -4,3 +4,8 @@ Audio Analyzer:
     Channel Power = -5.5687 dBm
     Occupied Bandwidth = 3.8153 kHz
     Frequency Error = -75.4463 kHz
+
+
+Sensors:
+Temperature: TMP 36 & 32
+Temp & Humidity: DMP
