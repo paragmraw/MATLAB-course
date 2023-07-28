@@ -1,0 +1,6 @@
+Audio Analyzer:
+
+1.Values from Mystery1:
+    Channel Power = -5.5687 dBm
+    Occupied Bandwidth = 3.8153 kHz
+    Frequency Error = -75.4463 kHz
