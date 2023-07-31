@@ -1,1 +1,6 @@
-Optimization Problems:
+%% Optimization Problems:
+Equality Constraints - Inequality Contraints = Feasibile Region (Region that contains the optimum solution)
+Maximum solution = - Minimum solution
+Total Solution - Contraint Hyperplanes = Feasibile Region
+
+HW: Finding an optimal flight plan.
